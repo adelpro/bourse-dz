@@ -1,0 +1,7 @@
+{
+  "name": "bourse-dz",
+  "description": "Arabic reporting skill for the Algiers stock exchange (SGBV).",
+  "version": "1.0.0",
+  "author": { "name": "Adel Ben Yahia" },
+  "license": "MIT"
+}

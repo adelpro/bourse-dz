@@ -1,0 +1,11 @@
+{
+  "name": "adelpro-bourse-dz",
+  "owner": { "name": "Adel Ben Yahia" },
+  "plugins": [
+    {
+      "name": "bourse-dz",
+      "source": { "source": "github", "repo": "adelpro/bourse-dz" },
+      "description": "Arabic reporting skill for the Algiers stock exchange (SGBV)."
+    }
+  ]
+}
