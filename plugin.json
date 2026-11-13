@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "bourse-dz",
+  "version": "1.1.0",
+  "description": "Arabic reporting skill for the Algiers stock exchange (SGBV): pulls official session data, index history and order-book depth, then writes a narrative Arabic report with designed charts.",
+  "author": {
+    "name": "Adel Ben Yahia"
+  },
+  "homepage": "https://github.com/adelpro/bourse-dz",
+  "repository": "https://github.com/adelpro/bourse-dz",
+  "license": "MIT",
+  "keywords": [
+    "bourse",
+    "algeria",
+    "sgbv",
+    "arabic",
+    "reporting",
+    "charts",
+    "skill"
+  ]
+}

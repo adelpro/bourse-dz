@@ -2,6 +2,22 @@
 
 All notable changes to this project are documented here.
 
+## [1.1.0] - 2026-11-13
+
+### Added
+
+- Full plugin layout: root `plugin.json` (Agent Plugins 1.0.0) so Agent Plugins clients and Codex can
+  install the skill from the repository.
+- `references/` set — `sources.md`, `market-mechanics.md`, `narrative.md`, `charts.md`,
+  `verification.md` — with the main SKILL.md trimmed to procedure and pitfalls.
+- `platforms` in the skill frontmatter; `## Pitfalls` section.
+
+### Changed
+
+- `## When to use` renamed to `## When to Use`, and the body restructured to the Hermes in-repo
+  standard (When to Use / Procedure / Pitfalls / Verification).
+- Author normalised to `Adel Ben Yahia` across manifests.
+
 ## [1.0.0] - 2026-11-13
 
 ### Added

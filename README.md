@@ -18,6 +18,24 @@ No API keys. All sources are public exchange pages.
 - One market-mechanics note per session, rotated by date, so a reader learns to interpret volume,
   value, trade count and the fixing mechanism instead of just reading numbers.
 
+## Structure
+
+```
+plugin.json                          Agent Plugins 1.0.0 manifest
+.claude-plugin/plugin.json           Claude Code plugin manifest
+.claude-plugin/marketplace.json      marketplace entry
+skills/algeria-bourse-report/
+  SKILL.md                           procedure, pitfalls, verification
+  references/sources.md              endpoints, payloads, parsing traps, SQLite schema
+  references/market-mechanics.md     how Algiers prices and settles
+  references/narrative.md            paragraph structure and Arabic editing rules
+  references/charts.md               chart conventions and matplotlib Arabic traps
+  references/verification.md         schedule, fixture, acceptance checks
+README.md
+CHANGELOG.md
+LICENSE
+```
+
 ## Sources
 
 Official exchange, French and Arabic: `https://www.sgbv.dz/fr` · `https://www.sgbv.dz/ar`
@@ -33,15 +51,27 @@ qualitative order-book colour only; its figures are not used as data.
 
 ## Install
 
-This repository follows the standard skill layout: `skills/<name>/SKILL.md`.
-
 ```bash
 git clone https://github.com/adelpro/bourse-dz.git
+
+# Hermes, or any agent that loads SKILL.md directories
 cp -r bourse-dz/skills/algeria-bourse-report ~/.hermes/skills/research/
-# or point any agent that loads SKILL.md files at that directory
+
+# skills.sh CLI
+npx skills add adelpro/bourse-dz -a claude-code -a hermes-agent --copy -y
 ```
 
-As a Claude Code plugin, load the directory containing `.claude-plugin/`.
+Claude Code and Agent Plugins clients load the repository directly through
+`.claude-plugin/marketplace.json` and the root `plugin.json`.
+
+## Validation
+
+Checked with [skill-validator-omni](https://github.com/adelpro/skill-validator-omni): **50/51** —
+agentskills.io, Anthropic, Hermes, skills.sh, Claude Code, Agent Plugins and multi-tool compatibility
+all pass in full. The single failure is a Codex frontmatter rule that cannot hold at the same time as
+the Hermes standard: Hermes requires `version`, `author` and `platforms`, while Codex's
+`quick_validate.py` allows only `name`, `description`, `license`, `allowed-tools` and `metadata`.
+Hermes is prioritised here; drop those three fields if you need Codex 12/12 instead.
 
 ## Requirements
 
